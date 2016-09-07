@@ -1,0 +1,2 @@
+defmodule ElixirDeploy do
+end
