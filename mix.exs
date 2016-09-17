@@ -14,7 +14,7 @@ defmodule ElixirDeploy.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :edeliver]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,9 @@ defmodule ElixirDeploy.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:exrm, "1.0.8"},
+      {:edeliver, "~> 1.4.0"}
+    ]
   end
 end

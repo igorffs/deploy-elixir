@@ -1,0 +1,13 @@
+APP="elixir_deploy"
+
+BUILD_HOST="localhost"
+BUILD_USER="igorffs"
+BUILD_AT="/Users/igorffs/src/deploy/build"
+
+STAGING_HOSTS="localhost"
+STAGING_USER="igorffs" # local user at staging hosts
+TEST_AT="/Users/igorffs/src/deploy/tests" # deploy directory on staging hosts. default is DELIVER_TO
+
+PRODUCTION_HOSTS="localhost"
+PRODUCTION_USER="igorffs"
+DELIVER_TO="/Users/igorffs/src/deploy/${APP}" # deploy directory on production hosts
