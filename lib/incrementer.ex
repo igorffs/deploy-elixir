@@ -1,6 +1,16 @@
 defmodule Incrementer do
   use GenServer
 
+  def run do
+    {:ok, pid} = Incrementer.start_link(0)
+    Incrementer.increment_for_life(pid)
+  end
+
+  def increment_for_life(pid) do
+    Incrementer.increment_by(pid, 1)
+    increment_for_life(pid)
+  end
+
   def start_link(start_value) do
     GenServer.start_link(__MODULE__, start_value)
   end
@@ -15,8 +25,9 @@ defmodule Incrementer do
 
   def handle_cast({:increment, value}, total) do
     new_total = total + value
-    IO.puts "#{total} + #{value} = #{new_total}"
+    IO.puts "Incrementing ... #{total} + #{value} = #{new_total}"
 
+    :timer.sleep(5_000)
     {:noreply, new_total}
   end
 
