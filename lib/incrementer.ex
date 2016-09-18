@@ -26,6 +26,7 @@ defmodule Incrementer do
   def handle_cast({:increment, value}, total) do
     new_total = total + value
     IO.puts "Incrementing ... #{total} + #{value} = #{new_total}"
+    IO.puts "This will appear in the new version! \n"
 
     :timer.sleep(5_000)
     {:noreply, new_total}
