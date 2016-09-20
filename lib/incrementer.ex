@@ -1,6 +1,8 @@
 defmodule Incrementer do
   use GenServer
 
+  @vsn "0.2.0"
+
   def run do
     {:ok, pid} = Incrementer.start_link(0)
     Incrementer.increment_for_life(pid)
